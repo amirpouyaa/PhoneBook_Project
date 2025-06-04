@@ -83,3 +83,14 @@ select {
     border: 1px solid #777777;
     border-radius: 0 5px 5px 0;
 }
+.todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+.todo-list {
+    min-width: 30%;
+    list-style: none;
+}
