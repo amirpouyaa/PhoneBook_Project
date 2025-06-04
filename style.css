@@ -22,3 +22,64 @@ form input {
     background: white;
     direction: rtl;
 }
+form input[type="text"], form input[type="number"] {
+    border: 1px solid #777777;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+form input:focus {
+    outline: none;
+}
+
+form button {
+    color: white;
+    background: #f86c6b;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form button:hover {
+    background: #f65846;
+}
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    outline: none;
+}
+.type-number {
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+    /* min-width: 30%; */
+}
+.type-number::after {
+    content: "\25BC"; /* This is the Unicode for a downward-pointing black triangle */
+    position: absolute;
+    background: #f86c6b;
+    color: white;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    height: 100%;
+    pointer-events: none;
+    transition: all 0.s ease;
+}
+select {
+    color: #777777;
+    width: 10rem;
+    padding: 1rem;
+    font-family: IRANSans;
+    font-size: 16px;
+    border: 1px solid #777777;
+    border-radius: 0 5px 5px 0;
+}
