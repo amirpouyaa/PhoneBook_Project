@@ -3,10 +3,12 @@ const todoMobileInput = document.querySelector('.todo-mobile-input')
 const todoButton = document.querySelector('.todo-button')
 const todoList = document.querySelector('.todo-list')
 const selectBox = document.querySelector('.type-todo')
+const filterOption = document.querySelector('.filter-todo');
 
 //event listner
 todoButton.addEventListener('click', addItem)
 todoList.addEventListener('click', deleteItem);
+filterOption.addEventListener('click', filterContacts);
 
 //function
 function addItem(event){
@@ -14,6 +16,7 @@ function addItem(event){
     console.log(event)
     const todoDiv = document.createElement('div');
     todoDiv.classList.add('todo')
+    todoDiv.classList.add(selectBox.options[selectBox.selectedIndex].value);
 
     //create li
     const newItem = document.createElement('li');
@@ -38,6 +41,7 @@ function addItem(event){
 
     todoMobileInput.value = '';
     todoNameInput.value = '';
+    filterOption.style.display = 'block';
 }
 function deleteItem(event) {
     console.log(event.target);
@@ -49,4 +53,32 @@ function deleteItem(event) {
         contact.remove();
       },2000);
     }
+  }
+  function filterContacts(event) {
+    //console.log(event.target.value)
+    const contacts = todoList.childNodes;
+    //console.log(contacts)
+    contacts.forEach(function(contact) {
+      switch (event.target.value) {
+        case "2":
+          contact.style.display = 'flex';
+          break;
+        case "1":
+          if (contact.classList.contains('1')) {
+            contact.style.display = 'flex';
+          } else {
+            contact.style.display = 'none';
+          }
+          break;
+        case "0":
+          if (!contact.classList.contains('1')) { // Assuming the original intention was to check for the absence of class '1' for case '0'
+            contact.style.display = 'flex';
+          } else {
+            contact.style.display = 'none';
+          }
+          break;
+        default:
+          break;
+      }
+    });
   }
