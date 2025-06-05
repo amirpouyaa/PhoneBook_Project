@@ -94,3 +94,22 @@ select {
     min-width: 30%;
     list-style: none;
 }
+.todo {
+    background: white;
+    margin: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    font-size: 1.5rem;
+    direction: rtl;
+    border: 1px solid #777;
+    transition: all 0.3s ease;
+  }
+  .todo-item {
+    flex: 1;
+    padding: 0rem 0.5rem;
+    text-align: right;
+    display: flex;
+    flex-flow: column;
+  }
